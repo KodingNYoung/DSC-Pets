@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+:root {
+  --grayish: #E6E7DE;
+  --pinkish: #FFE3CE;
+  --light-blue: #A5D7F7;
+  --dark-blue: #104C5E;
+  --brownish:#E68443;
+  --yellowish: #FFC629;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+nav {
+  background: rgba(230, 231, 222, 0.5);
+}
+
+/* GENERAL WEBSITE STYLES */
+/* texts */
+.darkblue-text {
+  color: var(--dark-blue) ;
+}
+.brownish-text {
+  color: var(--brownish);
+}
+
+/* buttons */
+.page-action-btn {
+  background-color: var(--brownish)
+}
+.page-action-btn:hover {
+  background-color: var(--yellowish)
+}
+.design {
+  width: 60vw;
+  height: 60vw;
+  max-width: 300px;
+  max-height: 300px;
+  background-color: var(--pinkish);
+  position: absolute;
+  z-index: -1;
+}
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+/* SPECIFIC TO THE UPLOAD PAGE */
+/* file input box */
+.file-input-field {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  max-height: 700px;
+  border: 1px solid var(--dark-blue);
+  background-color: var(--grayish);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.file-input-field--over {
+  background-color: #104c5e30;
+}
+.file-input-field label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+}
+.file-input-field label .icon{
+  font-size: 1.7rem;
+}
+.file-input-field label .file-limit{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.file-input-field input {
+  display: none;
+}
+.cards-region {
+  position: relative;
+}
+.upload-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.upload-card {
+  box-shadow: 0px 4px 5px #ccc;
+}
+
+.upload-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.cancel-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* END OF THE UPLOAD PAGE STYLE */
+
+/* SPECIFIC TO THE RESULT */
+.result-card {
+  max-width: 850px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+.carousel-indicators {
+  position: relative;
+}
+.carousel-indicators li {
+  background-color: #fff;
+  color: #104C5E;
+  height: 20px;
+  width: 20px;
+  text-indent: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.carousel-indicators li.active {
+  background-color: var(--dark-blue);
+  color: white
+}
+.carousel-control-next, .carousel-control-prev {
+  position: relative;
+}
+
+.carousel-control-next:hover, .carousel-control-prev:hover {
+  color: #104C5E;
+}
