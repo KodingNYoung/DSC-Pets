@@ -1,7 +1,8 @@
 // get the file input element and the field
 const fileInput = document.getElementById('data');
 const fileInputField = fileInput.closest('.file-input-field');
-const cardList = document.querySelector('.upload-cards'); 
+const cardList = document.querySelector('.upload-cards');
+const image = {} 
 
 // add click event listener to the card list and delegate to the buttons
 cardList.addEventListener('click', e => {
@@ -84,6 +85,8 @@ const handleFilesRender = file => {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file)
     fileReader.onload = () => {
+      // set the imageURL to the image object
+      image.URL = fileReader.result;
       // when the file reader reads the file, create the card
       card = `
       <div class="mb-3 rounded media container upload-card bg-white" data-card-id="${file.name}">
@@ -119,3 +122,14 @@ const hidePreloader = () => {
   document.querySelector('.preloader').classList.add('d-none');
 
 }
+// when the predict btn is click
+document.getElementById('predict-btn').addEventListener('click', e => {
+  e.preventDefault();
+
+  if (!image.URL) return; 
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://127.0.0.1:5000/predict", true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify(image));
+})
