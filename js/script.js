@@ -147,12 +147,15 @@ document.getElementById("predict-btn").addEventListener("click", (e) => {
     body: JSON.stringify(images),
   };
 
-  fetch("/upload", options)
+  fetch("/predict", options)
     .then((res) => res.json())
     .then((data) => {
       console.log(data.images);
       showResults(data.images);
-    });
+    })
+    .catch(err => {
+      console.log(err);
+    })
 });
 const showResults = (images) => {
   // show the results section
