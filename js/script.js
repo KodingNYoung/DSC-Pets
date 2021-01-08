@@ -209,7 +209,7 @@ const createCarouselItem = (image, index) => {
           <p class="file-name mb-md-4 mb-2">${image.name}</p>
           <p class="prediction-result mt-5">
             This is a
-            <span class="result brownish-text" id="result">DOG</span>
+            <span class="result brownish-text" id="result">${image.prediction}</span>
           </p>
         </div>
       </div>
